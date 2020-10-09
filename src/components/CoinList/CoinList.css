@@ -1,0 +1,59 @@
+
+.coinCard{
+    position: relative;
+    border-bottom: 50px;
+}
+
+.coinNameContainer{
+    position: relative;
+    top: 5px;
+    text-align: left;
+    left: 85px;
+   
+}
+.coinItem{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+.coinImage{
+    height: 50px;
+
+}
+.coinName{
+    position: relative;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 100px;
+}
+
+.coinPrice{
+    position: relative;
+    top: 21px;
+    display: flex;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 0px;
+}
+.coin24H{
+    position: relative;
+    padding-left: 10px;
+    top: 5px;
+    left: 5px;
+}
+
+.coinMarketCap{
+    position: relative;
+    padding-left: 10px;
+    top: 5px;
+    left: 5px;
+}
+
+.coinSupply{
+    position: relative;
+    padding-left: 10px;
+    top: 5px;
+    left: 5px;
+}
