@@ -1,15 +1,61 @@
-
-.coinCard{
+.table{
     position: relative;
-    border-bottom: 50px;
+    top: 100px;
+    left: 425px;
+    background-color: #36454F;
+    border-spacing: 0 50px;
 }
 
+.tableHeader{
+    background-color:  #36454F;
+    color: white;
+}
+
+
+/* Table Labels */
+.col-rank{
+    position: relative;
+    left: 25px;
+    padding-right: 50px;
+}
+.col-price{
+    position: relative;
+    left: 35px;
+    padding-right: 75px;
+}
+.col-24h{
+    position: relative;
+    left: 60px;
+    padding-right: 100px;
+}
+.col-market{
+    position: relative;
+    left: 60px;
+    padding-right: 100px;
+}
+.col-supply{
+    position: relative;
+    left: 60px;
+    padding-right: 100px;
+}
+
+
+/* Cryptocurrency Section */
+.coinCard{
+    position: relative;
+    margin: 50;
+    outline: solid black;
+    height: 100px;
+}
+.coinRank{
+    color: white;
+}
 .coinNameContainer{
     position: relative;
     top: 5px;
     text-align: left;
     left: 85px;
-   
+    color: white;
 }
 .coinItem{
     display: flex;
@@ -17,43 +63,46 @@
     box-sizing: border-box;
 }
 .coinImage{
+    position: relative;
     height: 50px;
-
+    top: -7px;
 }
 .coinName{
     position: relative;
-    left: 15px;
+    top: -7px;
+    left: 15px; 
     display: flex;
     align-items: center;
     box-sizing: border-box;
     margin-right: 100px;
 }
-
 .coinPrice{
     position: relative;
-    top: 21px;
+    top: 35px;
     display: flex;
     text-align: right;
     box-sizing: border-box;
-    padding-right: 0px;
+    padding-left: 20px;
+    color: white;
 }
 .coin24H{
     position: relative;
     padding-left: 10px;
-    top: 5px;
+    top: -3px;
     left: 5px;
+    color: white;
 }
-
 .coinMarketCap{
     position: relative;
     padding-left: 10px;
-    top: 5px;
+    top: -3px;
     left: 5px;
+    color: white;
 }
-
 .coinSupply{
     position: relative;
     padding-left: 10px;
-    top: 5px;
+    top: -3px;
     left: 5px;
+    color: white;
 }
