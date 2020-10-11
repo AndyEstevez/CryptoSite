@@ -24,10 +24,8 @@ export default class CoinList extends Component {
         request();
     }
 
-    
-    
-
     render() {
+        
         return (
             <div className="coinList">
                 <table className="table">
@@ -49,22 +47,28 @@ export default class CoinList extends Component {
                     </thead>
 
                     <tbody>
+
                         {this.state.coinList.map(function(coin){
                             return(
+                                
                                 <tr className="coinCard" key={coin.id}>
-                                    <td className="coinRank"> {coin.market_cap_rank} </td>
+                                   
+                                    <td className="coinRank"> {coin.market_cap_rank}  </td>
                                     <td className="coinNameContainer">
                                         <div className="coinItem">
+                                            <a className="coinURL" href={`/currencies/${coin.name}`}>
                                             <img className="coinImage" src={coin.image} alt={coin.name}/>
                                             <div>
                                                 <p className="coinName"> {coin.name} </p>
                                             </div>
+                                            </a>
                                         </div>
                                     </td>
                                     <td className="coinPrice"> ${String(coin.current_price).slice(0,8)} </td>
-                                    <td className="coin24H"> {String(coin.market_cap_change_percentage_24h).slice(0, 4)}% </td>
+                                    <td className="coin24H" style={{color: coin.market_cap_change_percentage_24h >= 0.00 ? "#00CC00" : "#ff0000"}}> {String(coin.market_cap_change_percentage_24h).slice(0, 4)}% </td>
                                     <td className="coinMarketCap"> ${(coin.market_cap).toLocaleString()} </td>
-                                    <td className="coinSupply"> {(coin.circulating_supply).toLocaleString()} </td>
+                                    <td className="coinSupply"> {(coin.circulating_supply).toLocaleString()} {String(coin.symbol).toLocaleUpperCase()} </td>
+                                   
                                 </tr>
                             )
                         })}

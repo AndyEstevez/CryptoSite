@@ -2,13 +2,13 @@
     position: relative;
     top: 100px;
     left: 425px;
-    background-color: #36454F;
+    
     border-spacing: 0 50px;
 }
 
 .tableHeader{
-    background-color:  #36454F;
-    color: white;
+    
+    color: black;
 }
 
 
@@ -47,15 +47,19 @@
     outline: solid black;
     height: 100px;
 }
-.coinRank{
+.coinURL{
+    text-decoration: none;
     color: white;
+}
+.coinRank{
+    
 }
 .coinNameContainer{
     position: relative;
     top: 5px;
     text-align: left;
     left: 85px;
-    color: white;
+    
 }
 .coinItem{
     display: flex;
@@ -65,44 +69,47 @@
 .coinImage{
     position: relative;
     height: 50px;
-    top: -7px;
+    top: 20px;
+    left: -40px;
 }
 .coinName{
     position: relative;
-    top: -7px;
-    left: 15px; 
+    top: -35px;
+    left: 30px; 
     display: flex;
     align-items: center;
     box-sizing: border-box;
     margin-right: 100px;
+    color: black;
+    font-weight: 500;
 }
 .coinPrice{
     position: relative;
-    top: 35px;
+    top: 40px;
     display: flex;
     text-align: right;
     box-sizing: border-box;
     padding-left: 20px;
-    color: white;
+    
 }
 .coin24H{
     position: relative;
     padding-left: 10px;
     top: -3px;
     left: 5px;
-    color: white;
+    font-size: 20px;
+    font-weight: 500;
+  
 }
 .coinMarketCap{
     position: relative;
     padding-left: 10px;
     top: -3px;
-    left: 5px;
-    color: white;
+    left: 5px; 
 }
 .coinSupply{
     position: relative;
     padding-left: 10px;
     top: -3px;
     left: 5px;
-    color: white;
 }
