@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { coinInfoURL } from '../../config';
 import CurrencyTable from './CurrencyTable';
+import CurrencyLinks from './CurrencyLinks';
 
 export default class CurrencyPage extends Component {
     constructor(props) {
@@ -53,6 +54,7 @@ export default class CurrencyPage extends Component {
                 </div>
 
                 <CurrencyTable info={this.state.coinInfo}/> 
+                <CurrencyLinks info={this.state.coinInfo}/>
             </div>
         )
     }

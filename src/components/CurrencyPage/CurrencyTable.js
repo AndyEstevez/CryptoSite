@@ -1,25 +1,17 @@
-import React from 'react';
-
-
-let marketCap = ''
-let volume = ''
-let circulatingSupply = ''
-let maxSupply = ''
-
+import React, { useState } from 'react';
 
 const CurrencyTable = (props) => {
+
+    let marketCap = ''
+    let volume = ''
+    let circulatingSupply = ''
+    let maxSupply = ''
+    const [max, setMax] = useState(true)
 
     return(
         <div>
             <table>
-                <thead>
-                    <tr className="tableHeader">
-                        <th> Market Cap </th>
-                        <th> Volume </th>
-                        <th> Circulating Supply </th>
-                        <th> Max Supply </th>
-                    </tr>
-                </thead>
+               
 
                 <tbody>
                     {Object.keys(props.info).map(function(index){
@@ -27,19 +19,30 @@ const CurrencyTable = (props) => {
                             marketCap = props.info[index].market_cap.usd
                             volume = props.info[index].total_volume.usd
                             circulatingSupply = props.info[index].circulating_supply
-                            maxSupply = props.info[index].max_supply
+                            maxSupply = props.info[index].total_supply // max_supply is null sometimes in the api
+                            if(maxSupply == null){
+                                setMax(false)
+                                console.log(max)
+                            }
+                            console.log(max)
 
-                            return(
-                                <tr>
-                                    <td>${ marketCap.toLocaleString() }</td>
-                                    <td>${ volume.toLocaleString() }</td>
-                                    <td>{ circulatingSupply.toLocaleString() } {String(props.info.symbol).toLocaleUpperCase()}</td>
-                                    <td>{ maxSupply.toLocaleString() } {String(props.info.symbol).toLocaleUpperCase()}</td>
-                                </tr>
-                            )
                         }
                     })}
+                    <tr>
+                        <td>${ marketCap.toLocaleString() }</td>
+                        <td>${ volume.toLocaleString() }</td>
+                        <td>{ circulatingSupply.toLocaleString() } {String(props.info.symbol).toLocaleUpperCase()}</td>
+                        {max ? <td>{ maxSupply.toLocaleString() } {String(props.info.symbol).toLocaleUpperCase()}</td> : <td></td>}
+                    </tr>
                 </tbody>
+                <thead>
+                    <tr className="tableHeader">
+                        <th> Market Cap </th>
+                        <th> Volume </th>
+                        <th> Circulating Supply </th>
+                        {max ? <th> Max Supply </th> : <th></th>}
+                    </tr>
+                </thead>
             </table>
         </div>
     )

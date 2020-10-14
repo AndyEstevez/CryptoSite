@@ -56,7 +56,7 @@ export default class CoinList extends Component {
                                     <td className="coinRank"> {coin.market_cap_rank}  </td>
                                     <td className="coinNameContainer">
                                         <div className="coinItem">
-                                            <a className="coinURL" href={`/currencies/${coin.name}`}>
+                                            <a className="coinURL" href={`/currencies/${coin.id}`}>
                                             <img className="coinImage" src={coin.image} alt={coin.name}/>
                                             <div>
                                                 <p className="coinName"> {coin.name} </p>
