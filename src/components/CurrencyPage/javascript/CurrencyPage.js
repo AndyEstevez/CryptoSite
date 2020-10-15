@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { coinInfoURL } from '../../config';
+import { coinInfoURL } from '../../../config';
+import '../CurrencyPage.css';
 import CurrencyTable from './CurrencyTable';
 import CurrencyLinks from './CurrencyLinks';
+import CurrencyAbout from './CurrencyAbout';
 
 export default class CurrencyPage extends Component {
     constructor(props) {
@@ -16,8 +18,8 @@ export default class CurrencyPage extends Component {
     }
     
     componentDidMount(){
-        const request = async () => {
-            const response = await fetch(`${coinInfoURL}${String(this.state.coinID.id).toLocaleLowerCase()}`)
+        const request = () => {
+            fetch(`${coinInfoURL}${String(this.state.coinID.id).toLocaleLowerCase()}`)
                 .then(response => response.json())
                 .then((data) => 
                     this.setState({ 
@@ -26,7 +28,6 @@ export default class CurrencyPage extends Component {
                         price: data.market_data.current_price,
                         percentage: data.market_data.price_change_percentage_24h
                 }))
-                 console.log(this.state.coinInfo)
         }
 
         request();
@@ -38,23 +39,24 @@ export default class CurrencyPage extends Component {
         const coinInfo = this.state.coinInfo
         
         return (
-            <div key={coinInfo.id}>
-                <div>
+            <div className="currencyPage" key={coinInfo.id}>
+                <div className="currencyBasic">
                     <div className="currencyNameImg">
-                        <img className="currencyImg" src={this.state.image.small} alt={coinInfo.name}/>
+                        <img className="currencyImg" src={`${this.state.image.small}`} alt={coinInfo.name}/>
                         <div>
                             <p className="currencyName"> {coinInfo.name} </p>
                         </div>
                     </div>
 
-                    <div>
-                        <p>{this.state.price.usd}</p>
-                        <p>{String(this.state.percentage).slice(0, 4)}</p>
+                    <div className="currencyPrice24H">
+                        <p className="currencyPrice">${this.state.price.usd}</p>
+                        <p className="currency24H">{String(this.state.percentage).slice(0, 4)}%</p>
                     </div>
                 </div>
 
                 <CurrencyTable info={this.state.coinInfo}/> 
                 <CurrencyLinks info={this.state.coinInfo}/>
+                <CurrencyAbout info={this.state.coinInfo}/>
             </div>
         )
     }

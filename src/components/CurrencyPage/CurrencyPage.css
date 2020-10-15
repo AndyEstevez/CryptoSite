@@ -1,0 +1,35 @@
+.currencyPage{
+    position: relative;
+    
+}
+/* Currency Basic */ 
+.currencyBasic{
+    position: relative;
+    top: 150px;
+    left: 300px;
+    width: 100px;
+}
+.currencyNameImg{
+    position: relative;
+    left: 50px; 
+    display: flex;
+}
+.currencyName{
+    font-weight: 500;
+}
+.currencyPrice24H{
+    position: relative;
+    top: -53px;
+    left: 250px; 
+    width: 50px;
+    display: flex;
+}
+.currencyPrice{
+    position: relative;
+    left: 100px;
+}
+.currency24H{
+    position: relative;
+    left: 150px;
+}
+

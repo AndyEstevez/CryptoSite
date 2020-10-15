@@ -11,8 +11,8 @@ export default class CoinList extends Component {
     }
 
     componentDidMount(){
-        const request = async () => {
-            const response = await fetch(coinPricingURL)
+        const request = () => {
+            fetch(coinPricingURL)
                 .then(response => response.json())
                 .then((data) => 
                     this.setState({ 

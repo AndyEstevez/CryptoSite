@@ -1,11 +1,8 @@
-
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import '../CurrencyTable.css';
 
 export default class CurrencyTable extends Component {
-    constructor(props){
-        super(props)
-        
-    }
+    
 
     createTable(props){
         let marketCap = ''
@@ -14,7 +11,7 @@ export default class CurrencyTable extends Component {
         let maxSupply = ''
         
             return(
-                <div>
+                <div className="currencyTable">
                     <table>
                         <tbody>
                             {Object.keys(props.info).map(function(index){
@@ -23,13 +20,15 @@ export default class CurrencyTable extends Component {
                                     volume = props.info[index].total_volume.usd
                                     circulatingSupply = props.info[index].circulating_supply
                                     maxSupply = props.info[index].total_supply // max_supply is null sometimes in the api
+                                    }
+                                return(null)
                                 }
-                            })}
+                            )}
                             <tr>
                                 <td>${ marketCap.toLocaleString() }</td>
                                 <td>${ volume.toLocaleString() }</td>
                                 <td>{ circulatingSupply.toLocaleString() } {String(props.info.symbol).toLocaleUpperCase()}</td>
-                                {this.handleTable(maxSupply)  ? <td>{ maxSupply } {String(props.info.symbol).toLocaleUpperCase()}</td> : <td></td>}
+                                {this.handleTable(maxSupply)  ? <td>{ maxSupply.toLocaleString() } {String(props.info.symbol).toLocaleUpperCase()}</td> : <td></td>}
                             </tr>
                         </tbody>
                         <thead>

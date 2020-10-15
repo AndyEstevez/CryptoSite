@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import CoinList from './components/CoinList/CoinList';
-import CurrencyPage from './components/CurrencyPage/CurrencyPage';
+import CurrencyPage from './components/CurrencyPage/javascript/CurrencyPage';
 
 
 function App() {
