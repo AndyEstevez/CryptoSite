@@ -25,18 +25,18 @@ export default class CurrencyTable extends Component {
                                 }
                             )}
                             <tr>
-                                <td>${ marketCap.toLocaleString() }</td>
-                                <td>${ volume.toLocaleString() }</td>
-                                <td>{ circulatingSupply.toLocaleString() } {String(props.info.symbol).toLocaleUpperCase()}</td>
-                                {this.handleTable(maxSupply)  ? <td>{ maxSupply.toLocaleString() } {String(props.info.symbol).toLocaleUpperCase()}</td> : <td></td>}
+                                <td className="row-mc">${ marketCap.toLocaleString() }</td>
+                                <td className="row-vol">${ volume.toLocaleString() }</td>
+                                <td className="row-cirSupply">{ circulatingSupply.toLocaleString() } {String(props.info.symbol).toLocaleUpperCase()}</td>
+                                {this.handleTable(maxSupply)  ? <td className="row-max">{ maxSupply.toLocaleString() } {String(props.info.symbol).toLocaleUpperCase()}</td> : <td></td>}
                             </tr>
                         </tbody>
                         <thead>
                             <tr className="tableHeader">
-                                <th> Market Cap </th>
-                                <th> Volume </th>
-                                <th> Circulating Supply </th>
-                                {this.handleTable(maxSupply) ? <th> Max Supply </th> : <th></th>}
+                                <th className="col-mc"> Market Cap </th>
+                                <th className="col-vol"> Volume </th>
+                                <th className="col-cirSupply"> Circulating Supply </th>
+                                {this.handleTable(maxSupply) ? <th className="col-max"> Max Supply </th> : <th></th>}
                             </tr>
                         </thead>
                     </table>

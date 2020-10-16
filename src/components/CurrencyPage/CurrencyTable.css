@@ -1,5 +1,47 @@
 .currencyTable{
     position: relative;
-    top: 55px;
-    padding-left: 1000px;
+    top: 155px;
+    padding-left: 780px;
+}
+
+.col-mc{
+    position: relative;
+    padding-right: 25px;
+}
+.col-vol{
+    position: relative;
+    left: 25px;
+    padding-right: 50px;
+}
+.col-cirSupply{
+    position: relative;
+    left: 25px;
+    padding-right: 50px;
+}
+.col-max{
+    position: relative;
+    left: 25px;
+    padding-right: 50px;
+}
+.row-mc{
+    position: relative;
+    padding-right: 25px;
+    
+}
+.row-vol{
+    position: relative;
+    left: 25px;
+    padding-right: 50px;
+}
+.row-cirSupply{
+    position: relative;
+    left: 25px;
+    padding-right: 50px;
+
+}
+.row-max{
+    position: relative;
+    left: 25px;
+    padding-right: 50px;
+
 }

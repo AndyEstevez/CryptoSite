@@ -33,15 +33,10 @@ export default class CoinList extends Component {
                     <thead>
                         <tr className="tableHeader">
                             <th className="col-rank"> Rank </th>
-
                             <th> Name </th>
-
                             <th className="col-price"> Price </th>
-
                             <th className="col-24h"> 24H </th>
-
                             <th className="col-market"> Market Cap </th>
-
                             <th className="col-supply"> Circulating Supply </th>
                         </tr>
                     </thead>

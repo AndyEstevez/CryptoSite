@@ -33,8 +33,6 @@ export default class CurrencyPage extends Component {
         request();
     }
 
-   
-
     render() {
         const coinInfo = this.state.coinInfo
         
@@ -50,7 +48,7 @@ export default class CurrencyPage extends Component {
 
                     <div className="currencyPrice24H">
                         <p className="currencyPrice">${this.state.price.usd}</p>
-                        <p className="currency24H">{String(this.state.percentage).slice(0, 4)}%</p>
+                        <p className="currency24H"  style={{color: this.state.percentage >= 0.00 ? "#00CC00" : "#ff0000"}}>({String(this.state.percentage).slice(0, 4)}%)</p>
                     </div>
                 </div>
 
