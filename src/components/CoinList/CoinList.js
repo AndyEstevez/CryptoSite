@@ -10,6 +10,8 @@ export default class CoinList extends Component {
         };
     }
 
+    // API request to get cryptocurrencies by rank through total market cap
+    // and set the state object 'coinList' to the top 50 of the response results 
     componentDidMount(){
         const request = () => {
             fetch(coinPricingURL)
@@ -28,8 +30,8 @@ export default class CoinList extends Component {
         
         return (
             <div className="coinList">
+                {/* Creating the table header and labeled based on from API data */}
                 <table className="table">
-
                     <thead>
                         <tr className="tableHeader">
                             <th className="col-rank"> Rank </th>
@@ -42,12 +44,11 @@ export default class CoinList extends Component {
                     </thead>
 
                     <tbody>
-
+                        {/* Looping through the state object 'coinList' 
+                        // and create a table row for each cryptocurrency that display: name, rank, price, image, market cap, circulating supply*/}
                         {this.state.coinList.map(function(coin){
                             return(
-                                
                                 <tr className="coinCard" key={coin.id}>
-                                   
                                     <td className="coinRank"> {coin.market_cap_rank}  </td>
                                     <td className="coinNameContainer">
                                         <div className="coinItem">
@@ -63,7 +64,6 @@ export default class CoinList extends Component {
                                     <td className="coin24H" style={{color: coin.market_cap_change_percentage_24h >= 0.00 ? "#00CC00" : "#ff0000"}}> {String(coin.market_cap_change_percentage_24h).slice(0, 4)}% </td>
                                     <td className="coinMarketCap"> ${(coin.market_cap).toLocaleString()} </td>
                                     <td className="coinSupply"> {(coin.circulating_supply).toLocaleString()} {String(coin.symbol).toLocaleUpperCase()} </td>
-                                   
                                 </tr>
                             )
                         })}

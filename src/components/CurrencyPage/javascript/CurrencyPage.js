@@ -6,6 +6,7 @@ import CurrencyLinks from './CurrencyLinks';
 import CurrencyAbout from './CurrencyAbout';
 
 export default class CurrencyPage extends Component {
+    // 
     constructor(props) {
         super(props);
         this.state = ({
@@ -17,6 +18,7 @@ export default class CurrencyPage extends Component {
         })
     }
     
+    // API request for the specific cryptocurrency from the params in the url
     componentDidMount(){
         const request = () => {
             fetch(`${coinInfoURL}${String(this.state.coinID.id).toLocaleLowerCase()}`)
@@ -37,6 +39,7 @@ export default class CurrencyPage extends Component {
         const coinInfo = this.state.coinInfo
         
         return (
+            // displaying the image, name, price of coin & rendering components to handle other info
             <div className="currencyPage" key={coinInfo.id}>
                 <div className="currencyBasic">
                     <div className="currencyNameImg">
@@ -51,7 +54,7 @@ export default class CurrencyPage extends Component {
                         <p className="currency24H"  style={{color: this.state.percentage >= 0.00 ? "#00CC00" : "#ff0000"}}>({String(this.state.percentage).slice(0, 4)}%)</p>
                     </div>
                 </div>
-
+                {/* send the reponse results from the API request as a prop to handle other information */}
                 <CurrencyTable info={this.state.coinInfo}/> 
                 <CurrencyLinks info={this.state.coinInfo}/>
                 <CurrencyAbout info={this.state.coinInfo}/>
