@@ -1,9 +1,35 @@
 .currencyTable{
     position: relative;
-    top: 155px;
-    padding-left: 780px;
+    /* top: 155px;
+    padding-left: 780px; */
+    margin: auto;
+    max-width: 500px;
+    width: 100%;
+    display: inline-block;
 }
 
+.currencyTable thead tr{
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 .col-mc{
     position: relative;
     padding-right: 25px;
@@ -44,4 +70,4 @@
     left: 25px;
     padding-right: 50px;
 
-}
+} */

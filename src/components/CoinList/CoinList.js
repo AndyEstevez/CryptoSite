@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { coinPricingURL } from '../../config'
 import './CoinList.css'
+//import axios from 'axios'
+
 
 export default class CoinList extends Component {
     constructor(){
         super();
         this.state = { 
-            coinList: []
+            coinList: [],
         };
     }
 
@@ -22,12 +24,15 @@ export default class CoinList extends Component {
                 }))
                 console.log(this.state.coinList)
         }
-
+        
+        
         request();
     }
 
     render() {
-        
+       
+       
+
         return (
             <div className="coinList">
                 {/* Creating the table header and labeled based on from API data */}
@@ -51,14 +56,10 @@ export default class CoinList extends Component {
                                 <tr className="coinCard" key={coin.id}>
                                     <td className="coinRank"> {coin.market_cap_rank}  </td>
                                     <td className="coinNameContainer">
-                                        <div className="coinItem">
-                                            <a className="coinURL" href={`/currencies/${coin.id}`}>
-                                            <img className="coinImage" src={coin.image} alt={coin.name}/>
-                                            <div>
-                                                <p className="coinName"> {coin.name} </p>
-                                            </div>
-                                            </a>
-                                        </div>
+                                        <a className="coinURL" href={`/currencies/${coin.id}`}>
+                                            <img className="coinImg" src={coin.image} alt={coin.name}/>
+                                            {coin.name} 
+                                        </a>
                                     </td>
                                     <td className="coinPrice"> ${String(coin.current_price).slice(0,8)} </td>
                                     <td className="coin24H" style={{color: coin.market_cap_change_percentage_24h >= 0.00 ? "#00CC00" : "#ff0000"}}> {String(coin.market_cap_change_percentage_24h).slice(0, 4)}% </td>

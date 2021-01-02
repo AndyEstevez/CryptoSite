@@ -1,11 +1,14 @@
 .linksList{
     position: relative;
-    height: 50px;
+    margin: auto;
+    /* height: 50px;
     width: 10px;
     left: 375px;
-    top: 85px;
-    white-space: nowrap;
-    font-size: 20px;
+    top: 85px; */
+    display: inline-block;
+    padding-top: 30px;
+    width: 100%;
+    font-size: 1.25em;
 }
 ul{
     list-style-type: none;

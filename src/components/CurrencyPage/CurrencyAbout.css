@@ -1,7 +1,6 @@
 .currencyAbout{
     position: relative;
-    top: 250px;
-    left: 350px;
-    width: 1250px;
+    padding: 120px 150px;
+    margin: auto;
     white-space: wrap;
 }

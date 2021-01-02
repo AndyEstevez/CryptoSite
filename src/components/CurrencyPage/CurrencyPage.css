@@ -1,40 +1,51 @@
 .currencyPage{
     position: relative;
-    
+    margin: auto;
 }
 /* Currency Basic */ 
 .currencyBasic{
     position: relative;
-    top: 150px;
-    left: 300px;
-    width: 100px;
+    width: 50%;
+    margin: auto;
     padding-bottom: 100px;
+    display: inline-block;
+
 }
 .currencyNameImg{
     position: relative;
-    left: 50px; 
-    display: flex;
+    padding-left: 0px; 
+    margin: auto;
+    padding: 50px 0px;
+    display: inline-block;
+
 }
 .currencyName{
     position: relative;
     font-weight: 500;
-    left: 20px;
+    margin: auto;
+    display: inline-block;
+    padding-left: 0px;
+    padding:10px 50px;
+
 }
 .currencyPrice24H{
     position: relative;
-    top: -69px;
-    left: 400px; 
+    margin: auto;
     width: 50px;
-    display: flex;
+    display: inline-block;
     font-size: 24px;
+    padding: 0px 50px;
 }
 .currencyPrice{
     position: relative;
-    left: 100px;
+    display: inline-block;
+    margin: auto;
+    padding: 10px 10px;
 }
 .currency24H{
     position: relative;
-    left: 175px;
+    display: inline-block;
     font-weight: 500;
+    margin: auto;
 }
 
